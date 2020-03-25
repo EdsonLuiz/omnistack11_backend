@@ -5,6 +5,7 @@ const connection = require('./database/connection')
 const ongController = require('./controllers/OngControllers')
 const incidentsController = require('./controllers/IncidentController')
 const profileController = require('./controllers/ProfileController')
+const sessionController = require('./controllers/SessionController')
 
 const routes = express.Router()
 
@@ -17,6 +18,9 @@ routes.post('/incidents', incidentsController.store)
 routes.delete('/incidents/:id', incidentsController.delete)
 
 routes.get('/profile', profileController.index)
+
+
+routes.post('/sessions', sessionController.store)
 
 
 module.exports = routes
